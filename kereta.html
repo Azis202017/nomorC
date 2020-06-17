@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="tambah_kereta.php">
+        <label for="kecepatan_rata_rata">Input kecepatan rata rata : </label><br> 
+        <input type="text" name="kecepatan_rata_rata" id="kecepatan_rata_rata" onkeyup="kereta();"> <br>
+        <label for="waktu_ditempuh">Input waktu tempuh : </label><br>
+        <input type="text" name="waktu_ditempuh" id="waktu_ditempuh" onkeyup="kereta();"> <br>
+        <label for="waktu_terlambat">Input waktu kendala : </label> <br>
+        <input type="text" name="waktu_terlambat" id="waktu_terlambat" onkeyup="kereta();   "><br>
+        <label for="total">Total kecepatan rata rata : </label><br>
+        <input type="text" name="total" id="total"><br><br>
+        <button type="submit">Kirim data</button>
+    
+    </form>
+    <script>
+        function kereta(){
+            let kecepatanRataRata = document.getElementById('kecepatan_rata_rata').value;
+            let waktu_ditempuh      = document.getElementById('waktu_ditempuh').value;
+            let waktu_terlambat     = document.getElementById('waktu_terlambat').value;
+            let hasilKecepatan      = (parseFloat(kecepatanRataRata) * parseFloat(waktu_ditempuh)) / parseFloat(waktu_terlambat);
+            if(!isNaN(hasilKecepatan)){
+                document.getElementById('total').value = hasilKecepatan;
+            }
+        }
+    
+    
+    </script>
+</body>
+</html>
